@@ -1,5 +1,7 @@
+import Image from 'next/image';
+
 export const Loading = () => {
-	return <img className='h-1/4 w-auto ' src='/loading.gif' />;
+	return <Image src='/loading.gif' height={100} width={100} />;
 };
 
 export default Loading;

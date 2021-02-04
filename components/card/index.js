@@ -1,15 +1,19 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Card = ({ imgSrc, imgSrcset, ytID, title, excerpt, link }) => (
 	<>
 		<article className='bg-white shadow-xl row-span-1'>
 			<div className='h-80 overflow-hidden bg-gray-300'>
 				{imgSrc && (
-					<img
-						className='object-cover w-full h-full'
-						src={imgSrc}
-						srcSet={imgSrcset}
-					/>
+					<div className='relative w-full h-full'>
+						<Image
+							className='object-cover'
+							src={imgSrc}
+							srcSet={imgSrcset}
+							layout='fill'
+						/>
+					</div>
 				)}
 				{ytID && (
 					<iframe

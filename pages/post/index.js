@@ -11,11 +11,11 @@ export default function Post() {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 
-			<main className='grid grid-rows-8 grid-cols-1 md:grid-cols-6 gap-4 overflow-hidden auto-rows-max md:auto-rows-min w-full'>
-				<div className='flex-initial'>
+			<main className='flex'>
+				<div className='flex-auto w-5/6'>
 					<AllPosts />
 				</div>
-				<div className='flex-none w-1/3 '>
+				<div className='flex-auto w-1/6 '>
 					<RecentPostsList />
 				</div>
 			</main>
