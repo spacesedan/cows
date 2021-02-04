@@ -12,6 +12,7 @@ const Card = ({ imgSrc, imgSrcset, ytID, title, excerpt, link }) => (
 							src={imgSrc}
 							srcSet={imgSrcset}
 							layout='fill'
+							loading='lazy'
 						/>
 					</div>
 				)}
@@ -23,7 +24,8 @@ const Card = ({ imgSrc, imgSrcset, ytID, title, excerpt, link }) => (
 						src={`https://www.youtube.com/embed/${ytID}`}
 						frameBorder='0'
 						allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-						allowFullScreen></iframe>
+						allowFullScreen
+					/>
 				)}
 			</div>
 			<div className='px-4'>
