@@ -4,9 +4,9 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
-		"build": "next build",
+		"build": "next build && next export && node rss-gen.js",
 		"start": "next start",
-		"deploy": "next build && next export && node rss-gen.js"
+		"deploy": "next build "
 	},
 	"dependencies": {
 		"@apollo/client": "^3.3.7",
