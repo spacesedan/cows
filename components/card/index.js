@@ -13,6 +13,7 @@ const Card = ({ imgSrc, imgSrcset, ytID, title, excerpt, link }) => (
 							srcSet={imgSrcset}
 							layout='fill'
 							loading='lazy'
+							alt={title}
 						/>
 					</div>
 				)}
@@ -25,6 +26,7 @@ const Card = ({ imgSrc, imgSrcset, ytID, title, excerpt, link }) => (
 						frameBorder='0'
 						allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
 						allowFullScreen
+						alt={title}
 					/>
 				)}
 			</div>

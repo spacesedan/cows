@@ -19,6 +19,7 @@ export const AllVideos = () => {
 					title={node.title}
 					ytID={node.youtubeID}
 					excerpt={node.excerpt}
+					slug={node.slug}
 				/>
 			))}
 		</Feed>

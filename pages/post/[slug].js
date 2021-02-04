@@ -1,3 +1,4 @@
+import Loading from '@/components/loading';
 import Head from 'next/head';
 import useSWR from 'swr';
 const endpoint = process.env.WORDPRESS_LOCAL_API_URL;
@@ -8,7 +9,12 @@ export default function Post({ slug }) {
 	const { data, error } = useSWR(`/api/post/${slug}`, fetcher);
 
 	if (error) return <div>error...</div>;
-	if (!data) return <div>loading...</div>;
+	if (!data)
+		return (
+			<div>
+				<Loading />
+			</div>
+		);
 
 	return (
 		<div>

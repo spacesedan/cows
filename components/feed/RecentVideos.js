@@ -6,6 +6,7 @@ import Loading from 'components/loading';
 
 export const RecentVideosFeed = () => {
 	const { data: recentVideos } = useSWR('/api/video/recent', fetcher);
+	console.log(recentVideos);
 
 	if (!recentVideos) return <Loading />;
 
@@ -20,6 +21,7 @@ export const RecentVideosFeed = () => {
 					title={node.title}
 					ytID={node.youtubeID}
 					excerpt={node.excerpt}
+					link={`/video/${node.slug}`}
 				/>
 			))}
 		</Feed>

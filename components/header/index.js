@@ -102,12 +102,10 @@ export default function Header() {
 			<div
 				className={`${
 					toggle ? 'block' : 'hidden'
-				} lg:flex lg:items-center lg:justify-end lg:w-auto w-full transition-all ease-in duration-700 `}>
+				} md:flex lg:items-center lg:justify-end lg:w-auto w-full transition-all ease-in duration-700 `}>
 				<div
 					onMouseLeave={MouseOut}
-					className={` opacity-${
-						toggle ? '100' : '0'
-					} flex flex-col items-center w-full lg:flex-row lg:items-center lg:justify-end lg:w-auto`}>
+					className='flex flex-col items-center w-full lg:flex-row lg:items-center lg:justify-end lg:w-auto'>
 					{links}
 					{authlinks}
 					{register}
