@@ -9,7 +9,7 @@ export const AllVideos = () => {
 	if (!allVideos) return <Loading />;
 
 	return (
-		<Feed cols={3}>
+		<Feed cols={2}>
 			<div className='col-span-full justify-self-start self-center'>
 				<h3 className='text-2xl sm:text-4xl font-semibold '>Videos</h3>
 			</div>
