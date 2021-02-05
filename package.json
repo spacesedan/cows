@@ -4,7 +4,7 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
-		"build": "next build && next export && node rss-gen.js",
+		"build": "next build",
 		"start": "next start",
 		"deploy": "next build "
 	},
