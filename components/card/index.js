@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const Card = ({ imgSrc, imgSrcset, ytID, title, excerpt, link }) => (
 	<>
-		<article className='bg-white shadow-xl row-span-1'>
+		<article className='bg-white shadow-xl row-span-1 col-span-1'>
 			<div className='h-80 overflow-hidden bg-gray-300'>
 				{imgSrc && (
 					<div className='relative w-full h-full'>
