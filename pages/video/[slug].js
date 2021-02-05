@@ -3,6 +3,8 @@ import Head from 'next/head';
 import useSWR from 'swr';
 const endpoint = process.env.WORDPRESS_LOCAL_API_URL;
 
+import Page from 'components/page';
+
 const fetcher = (...args) => fetch(...args).then(res => res.json());
 
 export default function Post({ slug }) {
@@ -26,10 +28,7 @@ export default function Post({ slug }) {
 					href='http://headless-next.local/wp-includes/css/dist/block-library/style.min.css?ver=5.6'></link>
 			</Head>
 
-			<main>
-				<h1>{data.video.title}</h1>
-				<div dangerouslySetInnerHTML={{ __html: data.video.content }}></div>
-			</main>
+			<Page title={data.video.title} content={data.video.content} />
 		</div>
 	);
 }

@@ -3,8 +3,13 @@ import Image from 'next/image';
 const Hero = () => (
 	<section
 		className='col-span-full row-start-1 row-end-5 
-  h-screen lg:h-85vh md:px-20 lg:px-24 px-2 bg-bottom bg-cover relative '>
-		<Image src='/just-right.jpg' layout='fill' objectFit='cover' />
+  h-screen lg:h-85vh md:px-20 lg:px-24 px-4 relative '>
+		<Image
+			src='/just-right.jpg'
+			layout='fill'
+			objectFit='cover'
+			objectPosition='bottom'
+		/>
 
 		<div className='flex flex-col justify-start items-center lg:items-start pt-12 sm:pt-40 '>
 			<h2 className='text-5xl lg:text-7xl font-body font-bold w-full text-center lg:text-left z-10'>

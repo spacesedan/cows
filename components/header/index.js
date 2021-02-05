@@ -1,16 +1,28 @@
 import React from 'react';
 import Link from 'next/link';
+import Router, { useRouter } from 'next/router';
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 
 import { useAuth } from 'lib/useAuth';
+import { route } from 'next/dist/next-server/server/router';
 
 export default function Header() {
 	const { user } = useAuth();
 	const [toggle, setToggle] = useState(false);
+	const [active, setActive] = useState(false);
+	const router = useRouter();
+
+	console.log(router.pathname);
 
 	const onClick = () => {
 		setToggle(prev => !prev);
+	};
+
+	const onActive = e => {
+		e.preventDefault();
+		if (router.pathname === href) {
+			setActive(true);
+		}
 	};
 
 	const MouseOut = () => {
@@ -24,9 +36,11 @@ export default function Header() {
 		.filter(link => link)
 		.map(({ label, href }) => {
 			return (
-				<Link href={href} key={href}>
+				<Link href={href} key={href} onClick={onActive}>
 					<a
-						className={`lg-mr-12 py-2 px-4 text-2xl lg:text-md cursor-pointer`}>
+						className={`lg-mr-12 py-2 px-4 text-2xl lg:text-md border-b-2 border-${
+							active ? 'bg-blue-600' : 'transparent'
+						} hover:border-blue-600 cursor-pointer`}>
 						{label}
 					</a>
 				</Link>
@@ -61,8 +75,11 @@ export default function Header() {
 		.filter(link => link)
 		.map(({ label, href }) => {
 			return (
-				<Link href={href} key={href}>
-					<a className='py-2 px-4 text-2xl lg:text-md cursor-pointer'>
+				<Link href={href} key={href} onClick={onActive}>
+					<a
+						className={`lg-mr-12 py-2 px-4 text-2xl lg:text-md border-b-2 ${
+							active ? 'border-bg-blue-600' : 'border-transparent'
+						} hover:border-blue-600 cursor-pointer`}>
 						{label}
 					</a>
 				</Link>
@@ -70,9 +87,9 @@ export default function Header() {
 		});
 
 	return (
-		<motion.nav
+		<nav
 			transition={{ delay: 3 }}
-			className={`flex flex-wrap  transition-height delay-300 ease-out fixed w-full bg-gradient-to-br from-white-1 to-white-2 z-10  lg:px-24 px-20 py-4`}
+			className='flex flex-wrap  transition-height delay-300 ease-out fixed w-full bg-gradient-to-br from-white-1 to-white-2 z-10  px-4 py-4'
 			style={{
 				backdropFilter: 'blur(20px)',
 			}}>
@@ -83,7 +100,7 @@ export default function Header() {
 			</div>
 			<div
 				onClick={onClick}
-				className=' lg:hidden h-auto w-8 md:w-10   self-center justify-self-center'>
+				className=' md:hidden h-auto w-8 md:w-10   self-center justify-self-center'>
 				<svg
 					className='fill-current hover:text-blue-600 transition duration-300 ease-in '
 					id='Layer_1'
@@ -102,15 +119,15 @@ export default function Header() {
 			<div
 				className={`${
 					toggle ? 'block' : 'hidden'
-				} md:flex lg:items-center lg:justify-end lg:w-auto w-full transition-all ease-in duration-700 `}>
+				} md:flex md:items-center md:justify-end md:w-auto w-full transition-all ease-in duration-700 `}>
 				<div
 					onMouseLeave={MouseOut}
-					className='flex flex-col items-center w-full lg:flex-row lg:items-center lg:justify-end lg:w-auto'>
+					className='flex flex-col items-center w-full md:flex-row md:items-center md:justify-end md:w-auto'>
 					{links}
 					{authlinks}
 					{register}
 				</div>
 			</div>
-		</motion.nav>
+		</nav>
 	);
 }

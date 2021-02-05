@@ -1,5 +1,6 @@
 import Loading from '@/components/loading';
 import Head from 'next/head';
+import Page from 'components/page';
 import useSWR from 'swr';
 const endpoint = process.env.WORDPRESS_LOCAL_API_URL;
 
@@ -26,10 +27,7 @@ export default function Post({ slug }) {
 					href='http://headless-next.local/wp-includes/css/dist/block-library/style.min.css?ver=5.6'></link>
 			</Head>
 
-			<main>
-				<h1>{data.post.title}</h1>
-				<div dangerouslySetInnerHTML={{ __html: data.post.content }}></div>
-			</main>
+			<Page title={data.post.title} content={data.post.content} />
 		</div>
 	);
 }

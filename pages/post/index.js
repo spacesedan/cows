@@ -7,7 +7,7 @@ export default function Post() {
 	return (
 		<div>
 			<Head>
-				<title>posts</title>
+				<title>Posts</title>
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 
@@ -15,7 +15,7 @@ export default function Post() {
 				<div className='flex-auto w-5/6'>
 					<AllPosts />
 				</div>
-				<div className='flex-auto w-1/6 '>
+				<div className='hidden md:block flex-auto w-1/6 '>
 					<RecentPostsList />
 				</div>
 			</main>

@@ -10,9 +10,9 @@ export const RecentPostsFeed = () => {
 
 	return (
 		<Feed>
-			<div className='col-span-full justify-self-start self-center'>
-				<h3 className='text-2xl sm:text-4xl font-semibold '>Recent Posts</h3>
-			</div>
+			<h3 className='col-span-full text-2xl sm:text-4xl font-semibold '>
+				Recent Posts
+			</h3>
 			{recentPosts.posts.edges.map(({ node }) => (
 				<Card
 					key={node.slug}

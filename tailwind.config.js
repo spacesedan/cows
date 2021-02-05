@@ -18,6 +18,9 @@ module.exports = {
 			width: {
 				100: '26rem',
 			},
+			padding: {
+				30: '8.5rem',
+			},
 			gradientColorStops: theme => ({
 				...theme('colors'),
 				'white-1': 'rgba(255, 255, 255, 0.4)',

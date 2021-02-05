@@ -10,7 +10,7 @@ export const RecentPostsList = () => {
 	if (!recentPosts) return <Loading />;
 
 	return (
-		<List>
+		<List type='Recent Posts'>
 			{recentPosts.posts.edges.map(({ node }) => (
 				<ListLink
 					key={node.slug}

@@ -5,17 +5,18 @@ import useSWR from 'swr';
 import Loading from 'components/loading';
 
 export const RecentVideosFeed = () => {
-	const { data: recentVideos } = useSWR('/api/video/recent', fetcher);
-	console.log(recentVideos);
+	const { data } = useSWR('/api/video/recent', fetcher);
+	console.log(data);
 
-	if (!recentVideos) return <Loading />;
+	if (!data) return <Loading />;
 
 	return (
-		<Feed>
-			<div className='col-span-full justify-self-start self-center'>
-				<h3 className='text-2xl sm:text-4xl font-semibold '>Recent Videos</h3>
-			</div>
-			{recentVideos.videos.edges.map(({ node }) => (
+		<Feed cols={3}>
+			<h3 className=' col-span-full text-2xl sm:text-4xl font-semibold '>
+				Recent Videos
+			</h3>
+
+			{data.videos.edges.map(({ node }) => (
 				<Card
 					key={node.slug}
 					title={node.title}
