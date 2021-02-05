@@ -1,4 +1,4 @@
-export default function ContactForm() {
+const ContactForm = () => {
 	return (
 		<div className='pt-40'>
 			<form name='contact' method='post' data-netlify='true'>
@@ -35,4 +35,6 @@ export default function ContactForm() {
 			</form>
 		</div>
 	);
-}
+};
+
+export default ContactForm();
