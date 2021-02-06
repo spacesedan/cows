@@ -1,4 +1,4 @@
-import { Feed } from 'components/feed';
+import { Feedtwo } from 'components/feed';
 import Card from 'components/card';
 import { fetcher } from 'util/fetcher';
 import useSWR from 'swr';
@@ -9,7 +9,7 @@ export const AllVideos = () => {
 	if (!allVideos) return <Loading />;
 
 	return (
-		<Feed cols={2}>
+		<Feedtwo>
 			<div className='col-span-full justify-self-start self-center'>
 				<h3 className='text-2xl sm:text-4xl font-semibold '>Videos</h3>
 			</div>
@@ -22,6 +22,6 @@ export const AllVideos = () => {
 					link={`/video/${node.slug}`}
 				/>
 			))}
-		</Feed>
+		</Feedtwo>
 	);
 };
