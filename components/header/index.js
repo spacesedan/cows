@@ -36,7 +36,7 @@ export default function Header() {
 		.filter(link => link)
 		.map(({ label, href }) => {
 			return (
-				<Link href={href} key={href} onClick={onActive}>
+				<Link href={href} key={href} onClick={onClick}>
 					<a
 						className={`lg-mr-12 py-2 px-4 text-2xl lg:text-md border-b-2 border-${
 							active ? 'bg-blue-600' : 'transparent'
@@ -71,11 +71,12 @@ export default function Header() {
 	const links = [
 		{ label: 'Blog', href: '/post' },
 		{ label: 'Video', href: '/video' },
+		{ label: 'Contact', href: '/contact/form' },
 	]
 		.filter(link => link)
 		.map(({ label, href }) => {
 			return (
-				<Link href={href} key={href} onClick={onActive}>
+				<Link href={href} key={href} onClick={onClick}>
 					<a
 						className={`lg-mr-12 py-2 px-4 text-2xl lg:text-md border-b-2 ${
 							active ? 'border-bg-blue-600' : 'border-transparent'
@@ -89,7 +90,7 @@ export default function Header() {
 	return (
 		<nav
 			transition={{ delay: 3 }}
-			className='flex flex-wrap  transition-height delay-300 ease-out fixed w-full bg-gradient-to-br from-white-1 to-white-2 z-10  px-4 py-4'
+			className='flex flex-wrap  transition-height delay-300 ease-out fixed w-full bg-gradient-to-br from-white-1 to-white-2 z-30  px-4 '
 			style={{
 				backdropFilter: 'blur(20px)',
 			}}>
@@ -100,7 +101,7 @@ export default function Header() {
 			</div>
 			<div
 				onClick={onClick}
-				className=' md:hidden h-auto w-8 md:w-10   self-center justify-self-center'>
+				className=' md:hidden h-auto w-4 md:w-6   self-center justify-self-center'>
 				<svg
 					className='fill-current hover:text-blue-600 transition duration-300 ease-in '
 					id='Layer_1'
