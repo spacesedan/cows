@@ -27,18 +27,20 @@ export default function Contact() {
 		e.preventDefault();
 
 		const recipientEmail = 'wpheadless@gmail.com';
-		const res = await sendContactMail(recipientEmail, name, email, formContent);
-		if (res.status < 300) {
+		const res = await sendContactMail(
+			recipientEmail,
+			name,
+			email,
+			formContent,
+		).then(
 			setState({
 				name: '',
 				email: '',
 				formContent: '',
 				formButtonDisabled: true,
 				formButtonText: 'Thanks!',
-			});
-		} else {
-			setState({ ...state, formButtonText: 'Please fill out all fields' });
-		}
+			}),
+		);
 	};
 
 	return (
@@ -47,7 +49,7 @@ export default function Contact() {
 				src='/cow-bg.svg'
 				layout='fill'
 				objectFit='cover'
-				alt='A background with a cow pattern'
+				alt='A background with a cow'
 			/>
 			<div
 				className='bg-gradient-to-br rounded-md from-white-1 to-white-2 z-30 border-white border-2 b flex items-center justify-center p-4 w-2/3'
@@ -92,16 +94,16 @@ export default function Contact() {
 							placeholder='Message'
 						/>
 					</div>
-					<div className='flex items-center justify-center mt-2 lg:mt-0 text-2xl lg:text-md pb-4 lg:pb-0 col-span-full'>
+					<div className='flex items-center justify-center mt-2 lg:mt-0 text-2xl lg:text-md pb-4 lg:pb-0 col-span-full w-full'>
 						<button
 							type='submit'
+							onClick={onClick}
 							disabled={formButtonDisabled}
 							className='bg-blue-600 relative pt-2 pb-3 px-4 rounded-full text-white z-10 cursor-pointer w-2/3'>
 							{formButtonText}
 						</button>
 						<button
-							onClick={onClick}
-							className='bg-blue-600 absolute py-2 pb-3 px-4 rounded-full  w-1/2'
+							className='bg-blue-600 absolute py-2 pb-3 px-4 rounded-full  w-1/3'
 							style={{
 								filter: 'blur(20px)',
 							}}>

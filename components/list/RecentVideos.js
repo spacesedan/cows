@@ -9,7 +9,7 @@ export const RecentVideosList = () => {
 	if (!recentVideos) return 'loading...';
 
 	return (
-		<List>
+		<List type='Recent Videos'>
 			{recentVideos.videos.edges.map(({ node }) => (
 				<ListLink
 					key={node.slug}
