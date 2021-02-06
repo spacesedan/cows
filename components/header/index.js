@@ -90,7 +90,7 @@ export default function Header() {
 	return (
 		<nav
 			transition={{ delay: 3 }}
-			className='flex flex-wrap  transition-height delay-300 ease-out fixed w-full bg-gradient-to-br from-white-1 to-white-2 z-30  px-4 '
+			className='flex flex-wrap  transition-height delay-300 ease-out fixed w-full bg-gradient-to-br from-white-1 to-white-2 z-50 px-4 py-1 '
 			style={{
 				backdropFilter: 'blur(20px)',
 			}}>

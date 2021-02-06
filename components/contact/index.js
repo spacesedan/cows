@@ -23,77 +23,88 @@ export default function Contact() {
 		setState({ ...state, [e.target.name]: e.target.value });
 	};
 
-	const handleSubmit = async e => {
+	const onClick = async e => {
 		e.preventDefault();
 
 		const recipientEmail = 'wpheadless@gmail.com';
 		const res = await sendContactMail(recipientEmail, name, email, formContent);
-		console.log(res);
 		if (res.status < 300) {
 			setState({
 				name: '',
 				email: '',
 				formContent: '',
 				formButtonDisabled: true,
-				formButtonText: 'Thanks for your message',
+				formButtonText: 'Thanks!',
 			});
 		} else {
-			setState({
-				...state,
-				formButtonText: 'Please fill out all fields.',
-			});
+			setState({ ...state, formButtonText: 'Please fill out all fields' });
 		}
 	};
 
 	return (
 		<div className='flex items-center justify-center h-screen w-screen relative'>
 			<Image src='/cow-bg.svg' layout='fill' objectFit='cover' />
-			<form className='pt-30 grid grid-cols-2 grid-rows-4 gap-2 w-3/4 z-10'>
-				<h2 className='col-span-full text-red-600 text-4xl font-semibold w-full text'>
-					Contact Us
-				</h2>
-				<div className='bg-blue-600 p-2 w-full justify-self-center '>
-					<input
-						type='text'
-						value={name}
-						name='name'
-						onChange={handleChange}
-						placeholder='Name'
-					/>
-				</div>
-				<div className='bg-blue-600 p-2'>
-					<input
-						type='email'
-						value={email}
-						name='email'
-						onChange={e =>
-							setState({ ...state, [e.target.name]: e.target.value })
-						}
-						placeholder='Email'
-					/>
-				</div>
-				<div className='bg-blue-600 row-span-2 p-2 col-span-full'>
-					<textarea
-						className='w-full'
-						rows={3}
-						value={formContent}
-						name='formContent'
-						onChange={e =>
-							setState({ ...state, [e.target.name]: e.target.value })
-						}
-						placeholder='Message'
-					/>
-				</div>
-				<div className='bg-blue-600 p-2 col-span-full justify-self-center w-2/5'>
-					<button
-						className='text-black bg-blue-600 w-full'
-						type='submit'
-						onClick={handleSubmit}
-						disabled={formButtonDisabled}>
-						{formButtonText}
-					</button>
-				</div>
-			</form>
+			<div
+				className='bg-gradient-to-br rounded-md from-white-1 to-white-2 z-30 border-white border-2 b flex items-center justify-center p-4 w-2/3'
+				style={{
+					backdropFilter: 'blur(20px)',
+				}}>
+				<form className='grid grid-cols-2 grid-rows-5 gap-2 w-5/6 md:w-3/4 z-10 '>
+					<h2 className='col-span-full  text-4xl font-semibold w-full text-center'>
+						Contact Us
+					</h2>
+					<div className='col-span-full md:col-span-1 p-2 w-full justify-self-center '>
+						<input
+							className='w-full text-2xl p-1 border-black border-2 focus:border-blue-600 rounded-md'
+							type='text'
+							value={name}
+							name='name'
+							onChange={handleChange}
+							placeholder='Name'
+						/>
+					</div>
+					<div className='col-span-full md:col-span-1 p-2 w-full justify-self-center  '>
+						<input
+							className='w-full text-2xl p-1 border-black border-2 rounded-md'
+							type='email'
+							value={email}
+							name='email'
+							onChange={e =>
+								setState({ ...state, [e.target.name]: e.target.value })
+							}
+							placeholder='Email'
+						/>
+					</div>
+					<div className=' row-span-2 p-2 col-span-full'>
+						<textarea
+							className='w-full text-2xl resize-none p-1 border-black border-2 rounded-md'
+							rows={3}
+							value={formContent}
+							name='formContent'
+							onChange={e =>
+								setState({ ...state, [e.target.name]: e.target.value })
+							}
+							placeholder='Message'
+						/>
+					</div>
+					<div className='flex items-center justify-center mt-2 lg:mt-0 text-2xl lg:text-md pb-4 lg:pb-0 col-span-full'>
+						<button
+							type='submit'
+							disabled={formButtonDisabled}
+							className='bg-blue-600 relative pt-2 pb-3 px-4 rounded-full text-white z-10 cursor-pointer w-2/3'>
+							{formButtonText}
+						</button>
+						<button
+							onClick={onClick}
+							className='bg-blue-600 absolute py-2 pb-3 px-4 rounded-full  w-1/2'
+							style={{
+								filter: 'blur(20px)',
+							}}>
+							{formButtonText}
+						</button>
+					</div>
+				</form>
+			</div>
 		</div>
 	);
 }
