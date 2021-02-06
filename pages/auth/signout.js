@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useAuth } from 'lib/useAuth';
+import Head from 'next/head';
 
 export default function SignOut() {
 	const { signOut } = useAuth();
@@ -9,7 +10,7 @@ export default function SignOut() {
 	return (
 		<div>
 			<Head>
-				<title>Headless Next</title>
+				<title>Sign Out</title>
 				<link rel='icon' href='/favicon.ico' />
 				<html lang='en' />
 			</Head>

@@ -1,4 +1,5 @@
 import Contact from 'components/contact';
+import Head from 'next/head';
 
 const Index = () => {
 	return (
