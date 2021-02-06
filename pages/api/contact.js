@@ -35,7 +35,7 @@ const mailer = ({ senderMail, name, text, recipientMail }) => {
 	const from =
 		name && senderMail ? `${name} < ${senderMail} >` : `${name || senderMail}`;
 	const message = {
-		FormData,
+		from,
 		to: `${recipientMail}`,
 		subject: `New message from ${from}`,
 		text,

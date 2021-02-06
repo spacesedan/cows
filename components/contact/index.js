@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { sendContactMail } from 'components/contact/mail-api';
+import Image from 'next/image';
 
 export default function Contact() {
 	const [state, setState] = useState({
@@ -30,7 +31,9 @@ export default function Contact() {
 		console.log(res);
 		if (res.status < 300) {
 			setState({
-				...state,
+				name: '',
+				email: '',
+				formContent: '',
 				formButtonDisabled: true,
 				formButtonText: 'Thanks for your message',
 			});
@@ -43,11 +46,14 @@ export default function Contact() {
 	};
 
 	return (
-		<>
-			<div className='pt-30'>
-				<div>
+		<div className='flex items-center justify-center h-screen w-screen relative'>
+			<Image src='/cow-bg.svg' layout='fill' objectFit='cover' />
+			<form className='pt-30 grid grid-cols-2 grid-rows-4 gap-2 w-3/4 z-10'>
+				<h2 className='col-span-full text-red-600 text-4xl font-semibold w-full text'>
+					Contact Us
+				</h2>
+				<div className='bg-blue-600 p-2 w-full justify-self-center '>
 					<input
-						className='bg-blue-600'
 						type='text'
 						value={name}
 						name='name'
@@ -55,9 +61,8 @@ export default function Contact() {
 						placeholder='Name'
 					/>
 				</div>
-				<div>
+				<div className='bg-blue-600 p-2'>
 					<input
-						className='bg-blue-600'
 						type='email'
 						value={email}
 						name='email'
@@ -67,10 +72,10 @@ export default function Contact() {
 						placeholder='Email'
 					/>
 				</div>
-				<div>
-					<input
-						className='bg-blue-600'
-						type='text'
+				<div className='bg-blue-600 row-span-2 p-2 col-span-full'>
+					<textarea
+						className='w-full'
+						rows={3}
 						value={formContent}
 						name='formContent'
 						onChange={e =>
@@ -79,16 +84,16 @@ export default function Contact() {
 						placeholder='Message'
 					/>
 				</div>
-				<div>
+				<div className='bg-blue-600 p-2 col-span-full justify-self-center w-2/5'>
 					<button
-						className='text-black bg-blue-600'
+						className='text-black bg-blue-600 w-full'
 						type='submit'
 						onClick={handleSubmit}
 						disabled={formButtonDisabled}>
 						{formButtonText}
 					</button>
 				</div>
-			</div>
-		</>
+			</form>
+		</div>
 	);
 }
