@@ -9,7 +9,7 @@ export const AllPosts = () => {
 	if (!allPosts) return <Loading />;
 
 	return (
-		<Feed cols={'two'}>
+		<Feed cols={2}>
 			<div className='col-span-full justify-self-start self-center'>
 				<h3 className='text-2xl sm:text-4xl font-semibold '>Posts</h3>
 			</div>
