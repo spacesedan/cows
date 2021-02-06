@@ -9,6 +9,7 @@ export default function Post() {
 			<Head>
 				<title>Posts</title>
 				<link rel='icon' href='/favicon.ico' />
+				<html lang='en' />
 			</Head>
 
 			<main className='flex'>

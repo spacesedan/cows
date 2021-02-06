@@ -8,6 +8,7 @@ export default function Home() {
 			<Head>
 				<title>Headless Next</title>
 				<link rel='icon' href='/favicon.ico' />
+				<html lang='en' />
 			</Head>
 
 			<main className='grid grid-rows-8 grid-cols-1 md:grid-cols-6 gap-4 overflow-hidden auto-rows-max md:auto-rows-min w-full'>

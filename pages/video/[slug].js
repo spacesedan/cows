@@ -26,6 +26,7 @@ export default function Post({ slug }) {
 				<link
 					rel='stylesheet'
 					href='http://headless-next.local/wp-includes/css/dist/block-library/style.min.css?ver=5.6'></link>
+				<html lang='en' />
 			</Head>
 
 			<Page title={data.video.title} content={data.video.content} />

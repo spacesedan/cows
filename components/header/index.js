@@ -18,13 +18,6 @@ export default function Header() {
 		setToggle(prev => !prev);
 	};
 
-	const onActive = e => {
-		e.preventDefault();
-		if (router.pathname === href) {
-			setActive(true);
-		}
-	};
-
 	const MouseOut = () => {
 		setToggle(prev => !prev);
 	};

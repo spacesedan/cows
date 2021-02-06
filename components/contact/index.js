@@ -43,7 +43,12 @@ export default function Contact() {
 
 	return (
 		<div className='flex items-center justify-center h-screen w-screen relative'>
-			<Image src='/cow-bg.svg' layout='fill' objectFit='cover' />
+			<Image
+				src='/cow-bg.svg'
+				layout='fill'
+				objectFit='cover'
+				alt='A background with a cow pattern'
+			/>
 			<div
 				className='bg-gradient-to-br rounded-md from-white-1 to-white-2 z-30 border-white border-2 b flex items-center justify-center p-4 w-2/3'
 				style={{

@@ -8,6 +8,7 @@ export default function Video() {
 			<Head>
 				<title>Videos</title>
 				<link rel='icon' href='/favicon.ico' />
+				<html lang='en' />
 			</Head>
 
 			<main className='flex'>

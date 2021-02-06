@@ -8,6 +8,11 @@ export default function SignOut() {
 	}, []);
 	return (
 		<div>
+			<Head>
+				<title>Headless Next</title>
+				<link rel='icon' href='/favicon.ico' />
+				<html lang='en' />
+			</Head>
 			<h2>Signed Out</h2>
 		</div>
 	);

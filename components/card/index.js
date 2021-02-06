@@ -20,6 +20,7 @@ const Card = ({ imgSrc, imgSrcset, ytID, title, excerpt, link }) => (
 				{ytID && (
 					<iframe
 						className='object-cover w-full h-full'
+						title={title}
 						width='560'
 						height='315'
 						src={`https://www.youtube.com/embed/${ytID}`}

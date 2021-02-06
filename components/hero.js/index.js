@@ -9,6 +9,7 @@ const Hero = () => (
 			layout='fill'
 			objectFit='cover'
 			objectPosition='bottom'
+			alt='Cows roaming a pasture'
 		/>
 
 		<div className='flex flex-col justify-start items-center lg:items-start pt-12 sm:pt-40 '>
