@@ -9,7 +9,7 @@ export const RecentPostsFeed = () => {
 	if (!recentPosts) return <Loading />;
 
 	return (
-		<Feed>
+		<Feed cols={3}>
 			<h3 className='col-span-full text-2xl sm:text-4xl font-semibold '>
 				Recent Posts
 			</h3>
