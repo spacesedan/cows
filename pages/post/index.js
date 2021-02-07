@@ -33,7 +33,7 @@ export default function Post() {
 						link={`/post/${heroPost.slug}`}
 					/>
 				</div>
-				<div className='flex-auto w-full  col-span-5'>
+				<div className='flex-auto w-full col-span-full md:col-span-5'>
 					<AllPosts posts={morePosts} />
 				</div>
 				<div className='col-span-1 hidden md:block flex-auto w-full'>

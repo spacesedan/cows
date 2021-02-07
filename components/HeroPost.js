@@ -10,7 +10,7 @@ export default function HeroPost({
 	link,
 }) {
 	return (
-		<section className='bg-white shadow-xl grid grid-cols-3'>
+		<section className='bg-white shadow-xl grid grid-cols-1  lg:grid-cols-3'>
 			<div className='h-106 overflow-hidden bg-gray-300 col-span-2'>
 				{imgSrc && (
 					<div className='relative w-full h-full'>
@@ -48,7 +48,7 @@ export default function HeroPost({
 				)}
 
 				{link && (
-					<div className='flex items-center ml-3 pt-4'>
+					<div className='flex items-center ml-3 pt-4 mb-4 lg:mb-0 '>
 						<Link href={link}>
 							<a className='group font-mono text-lg shadow-underline text-gray-500 relative '>
 								<span className='z-10 relative'>Read More</span>

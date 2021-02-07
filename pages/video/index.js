@@ -32,7 +32,7 @@ export default function Post() {
 						link={`/video/${heroVideo.slug}`}
 					/>
 				</div>
-				<div className='flex-auto w-full  col-span-5'>
+				<div className='flex-auto w-full col-span-full md:col-span-5'>
 					<AllVideos videos={moreVideos} />
 				</div>
 				<div className='col-span-1 hidden md:block flex-auto w-full'>
