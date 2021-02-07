@@ -1,19 +1,14 @@
 import { Feedtwo } from 'components/feed';
 import Card from 'components/card';
-import { fetcher } from 'util/fetcher';
-import useSWR from 'swr';
-import Loading from '../loading';
 
-export const AllPosts = () => {
-	const { data: allPosts } = useSWR('/api/post/posts', fetcher);
-	if (!allPosts) return <Loading />;
-
+export const AllPosts = ({ posts }) => {
 	return (
 		<Feedtwo cols={2}>
 			<div className='col-span-full justify-self-start self-center'>
-				<h3 className='text-2xl sm:text-4xl font-semibold '>Posts</h3>
+				<h3 className='text-2xl sm:text-4xl font-semibold '>More Posts</h3>
 			</div>
-			{allPosts.posts.edges.map(({ node }) => (
+
+			{posts.map(({ node }) => (
 				<Card
 					key={node.slug}
 					title={node.title}

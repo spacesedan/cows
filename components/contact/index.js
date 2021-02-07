@@ -62,7 +62,7 @@ export default function Contact() {
 					</h2>
 					<div className='col-span-full md:col-span-1 p-2 w-full justify-self-center '>
 						<input
-							className='w-full text-2xl p-1 border-black border-2 focus:border-blue-600 rounded-md'
+							className='w-full text-2xl p-1 border-transparent border-2 focus:border-blue-600 focus:outline-none rounded-md'
 							type='text'
 							value={name}
 							name='name'
@@ -72,7 +72,7 @@ export default function Contact() {
 					</div>
 					<div className='col-span-full md:col-span-1 p-2 w-full justify-self-center  '>
 						<input
-							className='w-full text-2xl p-1 border-black border-2 rounded-md'
+							className='w-full text-2xl p-1 border-transparent border-2 focus:border-blue-600 focus:outline-none rounded-md'
 							type='email'
 							value={email}
 							name='email'
@@ -84,7 +84,7 @@ export default function Contact() {
 					</div>
 					<div className=' row-span-2 p-2 col-span-full'>
 						<textarea
-							className='w-full text-2xl resize-none p-1 border-black border-2 rounded-md'
+							className='w-full text-2xl resize-none p-1 border-transparent border-2 focus:border-blue-600 focus:outline-none rounded-md'
 							rows={3}
 							value={formContent}
 							name='formContent'

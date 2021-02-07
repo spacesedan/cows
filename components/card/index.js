@@ -7,7 +7,7 @@ const Card = ({ imgSrc, imgSrcset, ytID, title, excerpt, link }) => (
 			{imgSrc && (
 				<div className='relative w-full h-full'>
 					<Image
-						className='object-cover'
+						objectFit='cover'
 						src={imgSrc}
 						srcSet={imgSrcset}
 						layout='fill'
