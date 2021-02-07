@@ -4,7 +4,7 @@ import { fetcher } from 'util/fetcher';
 
 import { AllPosts } from 'components/feed';
 import { RecentPostsList } from 'components/list';
-import Loading from 'components/Loading';
+import Loading from 'components/loading';
 import HeroPost from '../../components/HeroPost';
 
 export default function Post() {
