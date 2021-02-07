@@ -4,13 +4,13 @@ import Router, { useRouter } from 'next/router';
 import { useState } from 'react';
 
 import { useAuth } from 'lib/useAuth';
-import { route } from 'next/dist/next-server/server/router';
 
 export default function Header() {
 	const { user } = useAuth();
 	const [toggle, setToggle] = useState(false);
-	const [active, setActive] = useState(false);
+
 	const router = useRouter();
+	const active = router.pathname;
 
 	console.log(router.pathname);
 
@@ -31,9 +31,9 @@ export default function Header() {
 			return (
 				<Link href={href} key={href} onClick={onClick}>
 					<a
-						className={`lg-mr-12 py-2 px-4 text-2xl lg:text-md border-b-2 border-${
-							active ? 'bg-blue-600' : 'transparent'
-						} hover:border-blue-600 cursor-pointer`}>
+						className={`lg-mr-12 py-2 px-4 text-2xl lg:text-md border-b-2 ${
+							active === href ? 'border-blue-600' : 'border-transparent'
+						} hover:border-blue-600 cursor-pointer transition-all ease-out duration-1000  `}>
 						{label}
 					</a>
 				</Link>
@@ -71,9 +71,9 @@ export default function Header() {
 			return (
 				<Link href={href} key={href} onClick={onClick}>
 					<a
-						className={`lg-mr-12 py-2 px-4 text-2xl lg:text-md border-b-2 ${
-							active ? 'border-bg-blue-600' : 'border-transparent'
-						} hover:border-blue-600 cursor-pointer`}>
+						className={`lg-mr-12 py-2 px-4 text-2xl lg:text-md ${
+							active === href ? 'border-blue-600' : 'border-transparent'
+						} border-b-2 hover:border-blue-600 cursor-pointer transition-all ease-out duration-1000`}>
 						{label}
 					</a>
 				</Link>

@@ -1,4 +1,5 @@
 import { ApolloProvider } from '@apollo/client';
+import { AnimateSharedLayout } from 'framer-motion';
 
 import { useApollo } from 'lib/apollo';
 import { AuthProvider } from 'lib/useAuth';
@@ -12,8 +13,10 @@ function MyApp({ Component, pageProps }) {
 	return (
 		<ApolloProvider client={apolloClient}>
 			<AuthProvider>
-				<Header />
-				<Component {...pageProps} />
+				<AnimateSharedLayout>
+					<Header />
+					<Component {...pageProps} />
+				</AnimateSharedLayout>
 			</AuthProvider>
 		</ApolloProvider>
 	);
