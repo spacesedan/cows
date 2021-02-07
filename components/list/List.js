@@ -1,6 +1,6 @@
 export const List = ({ type, children }) => (
 	<div className='flex justify-center pt-30 '>
-		<div className='shadow-md w-5/6 '>
+		<div className='shadow-md w-5/6 bg-white '>
 			<h4 className='text-lg lg:text-xl text-center p-4 font-semibold'>
 				{type}
 			</h4>

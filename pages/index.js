@@ -4,7 +4,7 @@ import Hero from '@/components/hero.js';
 
 export default function Home() {
 	return (
-		<div>
+		<div className='bg-gray-100'>
 			<Head>
 				<title>Headless Next</title>
 				<link rel='icon' href='/favicon.ico' />

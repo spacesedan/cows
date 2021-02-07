@@ -38,11 +38,11 @@ export default function HeroPost({
 					/>
 				)}
 			</div>
-			<div className='px-4'>
-				<h4 className=' text-2xl font-semibold'>{title}</h4>
+			<div className='px-4 pt-4'>
+				<h4 className=' text-3xl mb-5 font-semibold'>{title}</h4>
 				{excerpt && (
 					<div
-						className=' text-xl  mt-2 h-auto overflow-hidden'
+						className=' text-xl mt-2 h-auto overflow-hidden'
 						dangerouslySetInnerHTML={{ __html: excerpt }}
 					/>
 				)}
