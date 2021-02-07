@@ -34,7 +34,7 @@ const Card = ({ imgSrc, imgSrcset, ytID, title, excerpt, link }) => (
 			<h4 className='mt-5 text-2xl font-semibold'>{title}</h4>
 			{excerpt && (
 				<div
-					className=' mt-5 text-xl h-60 overflow-hidden'
+					className=' mt-5 text-xl h-auto overflow-hidden'
 					dangerouslySetInnerHTML={{ __html: excerpt }}
 				/>
 			)}
